@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <link rel="stylesheet" href="calculator.css"> <!-- Or link to Tailwind CSS CDN -->
+</head>
+<body>
+    <div class="container">
+        <h1>Inc-Exp Tracker</h1>
+
+        <!-- Input Fields -->
+        <div class="input-section">
+            <input type="text" id="description" placeholder="Description" />
+            <input type="number" id="amount" placeholder="Amount" />
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button onclick="addEntry()">Add</button>
+            <button onclick="resetFields()">Reset</button>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <input type="radio" name="filter" value="all" checked onclick="filterEntries('all')"> All
+            <input type="radio" name="filter" value="income" onclick="filterEntries('income')"> Income
+            <input type="radio" name="filter" value="expense" onclick="filterEntries('expense')"> Expense
+        </div>
+
+        <!-- Summary -->
+        <div class="summary">
+            <p>Total Income: <span id="totalIncome">0</span></p>
+            <p>Total Expense: <span id="totalExpense">0</span></p>
+            <p>Net Balance: <span id="netBalance">0</span></p>
+        </div>
+
+        <!-- Entries List -->
+        <div class="entries">
+            <ul id="entriesList"></ul>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
